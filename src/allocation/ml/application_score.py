@@ -5,6 +5,8 @@ import pandas as pd
 import numpy as np
 # from sklearn import preprocessing
 from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import OneHotEncoder
+
 import requests
 # Miscellineous
 import os

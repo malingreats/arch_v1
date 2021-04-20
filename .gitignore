@@ -1,0 +1,5 @@
+.venv
+.mypy_cache
+__pycache__
+*.egg-info
+xgboost-1.4.0-py3-none-manylinux2010_x86_64.whl

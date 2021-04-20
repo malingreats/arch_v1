@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Financial Paradise Loan Application Scoring</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+    <h1>Financial Paradise Loan Application Scoring</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+     <div>
+    <form action="{{ url_for('get_prediction')}}"method="post">
+      <input type="text" name="gender_revised" placeholder="gender_revised" required="required" /><br>
+        <input type="text" name="final_branch" placeholder="final_branch" required="required" /><br>
+        <input type="text" name="age" placeholder="age" required="required" /><br>
+        <input type="text" name="marital_status" placeholder="marital_status" required="required" /><br>
+        <input type="text" name="house" placeholder="house" required="required" /><br>
+        <input type="text" name="loan_type" placeholder="loan_type" required="required" /><br>
+        <input type="text" name="fund" placeholder="fund" required="required" /><br>
+        <input type="text" name="loan_purpose" placeholder="loan_purpose" required="required" /><br>
+        <input type="text" name="client_type" placeholder="client_type" required="required" /><br>
+        <input type="text" name="client_classification" placeholder="client_classification" required="required" /><br>
+        <input type="text" name="currency" placeholder="currency" required="required" /><br>
+        <input type="text" name="target" placeholder="target" required="required" /><br>
+        <input type="text" name="highest_sales" placeholder="highest_sales" required="required" /><br>
+        <input type="text" name="lowest_sales" placeholder="lowest_sales" required="required" /><br>
+        <input type="text" name="sales_details" placeholder="sales_details" required="required" /><br>
+        <input type="text" name="principal_amount" placeholder="principal_amount" required="required" /><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+</div>
+   <br>
+   <br>
+  
+   
+ </div>
+ {{pred}}
+
+</body>
+</html>

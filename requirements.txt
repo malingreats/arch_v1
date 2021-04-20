@@ -1,0 +1,21 @@
+# app
+sqlalchemy
+flask
+psycopg2-binary
+redis
+pandas
+numpy
+sklearn 
+# xgboost
+xlrd
+openpyxl
+grpcio
+grpcio-tools
+
+# dev/tests
+pytest
+pytest-icdiff
+mypy
+pylint
+requests
+tenacity

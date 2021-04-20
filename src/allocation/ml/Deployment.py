@@ -7,7 +7,7 @@ from sklearn import preprocessing
 import requests
 # Miscellineous
 import os
-
+from sklearn.preprocessing import OneHotEncoder
 os.getcwd()
 
 #Loading the Model
@@ -50,9 +50,16 @@ categorical_data = app_train[cate_vars]
 categorical_data = categorical_data.astype(str)
 categorical_data.shape
 # Instantiate label encoder
-le = preprocessing.LabelEncoder()
-categorical_data = categorical_data.apply(lambda col: le.fit_transform(col).astype(str))
-# categorical_data = le.fit_transform(categorical_data.astype(str))
+# le = preprocessing.LabelEncoder()
+# categorical_data = categorical_data.apply(lambda col: le.fit_transform(col).astype(str))
+# # categorical_data = le.fit_transform(categorical_data.astype(str))
+
+# creating instance of one-hot-encoder
+enc = OneHotEncoder(handle_unknown='ignore')
+# passing bridge-types-cat column (label encoded values of bridge_types)
+categorical_data = pd.DataFrame(enc.fit_transform(categorical_data).toarray())
+
+
 
 # Concat the data
 clean_data = pd.concat([categorical_data, numerical_data], axis = 1)
